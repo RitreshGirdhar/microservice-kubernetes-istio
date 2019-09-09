@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8ms1-v1
+  labels:
+    app: k8ms1-v1
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8ms1
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: k8ms1
+        version: v1
+    spec:
+      containers:
+        - name: k8ms1
+          image: ritreshgirdhar/k8ms1:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8811
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8ms1
+  labels:
+    app: k8ms1
+    service: k8ms1
+spec:
+  ports:
+    - port: 8811
+      name: http
+  selector:
+    app: k8ms1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8ms2-v1
+  labels:
+    app: k8ms2-v1
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8ms2
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: k8ms2
+        version: v1
+    spec:
+      containers:
+        - name: k8ms2
+          image: ritreshgirdhar/k8ms2:latest
+          ports:
+            - containerPort: 8822
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: k8ms2
+  labels:
+    app: k8ms2
+    service: k8ms2
+spec:
+  ports:
+    - port: 8822
+      name: http
+  selector:
+    app: k8ms2
