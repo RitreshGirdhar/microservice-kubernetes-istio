@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8ms1-v1
+  labels:
+    app: k8ms1-v1
+    version: "1.0"
+    visualize: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8ms1
+      version: "1.0"
+      serving: "true"
+  template:
+    metadata:
+      labels:
+        app: k8ms1
+        serving: "true"
+        version: "1.0"
+        visualize: "true"
+    spec:
+      containers:
+      - name: k8ms1
+        image: k8ms1:latest
+        livenessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: /api1
+            port: 8811
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8811
+        ports:
+        - containerPort: 8811
+          name: http
