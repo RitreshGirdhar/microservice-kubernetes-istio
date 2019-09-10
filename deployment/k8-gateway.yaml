@@ -1,4 +1,4 @@
-apiVersion: networking.istio.io/v2alpha3
+apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: k8-gateway
@@ -13,7 +13,7 @@ spec:
       hosts:
         - "*"
 ---
-apiVersion: networking.istio.io/v2alpha3
+apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: k8
