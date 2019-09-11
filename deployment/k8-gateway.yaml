@@ -28,6 +28,8 @@ spec:
             exact: /k8ms2/api2
         - uri:
             exact: /api2
+        - uri:
+            exact: /invoke3rdparty/api2
       route:
         - destination:
             host: k8ms2
@@ -38,6 +40,8 @@ spec:
             exact: /k8ms1/api1
         - uri:
             exact: /api1
+        - uri:
+            exact: /invoke3rdparty/api1
       route:
         - destination:
             host: k8ms1
