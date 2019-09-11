@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8ms2-v1
+  labels:
+    app: k8ms2-v1
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: k8ms2
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: k8ms2
+        version: v1
+    spec:
+      containers:
+        - name: k8ms2
+          image: ritreshgirdhar/k8ms2:latest
+          ports:
+            - containerPort: 8822
+          volumeMounts:
+            - mountPath: "/tmp/logs"
+              name: k8ms2-mt-volume
+      volumes:
+        - name: k8ms2-mt-volume
+          persistentVolumeClaim:
+            claimName: task-pv-claim
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: k8ms2
+  labels:
+    app: k8ms2
+    service: k8ms2
+spec:
+  ports:
+    - port: 8822
+      name: http
+  selector:
+    app: k8ms2
+  type: LoadBalancer
