@@ -1,0 +1,14 @@
+
+vsquid:S1602$"SRemove useless curly braces around statement and then remove useless return keyword(¯“Óıÿÿÿÿ8ùß¸şÑ-
+usquid:S4276$"RRefactor this code to use the more specialised Functional Interface 'LongSupplier'(¯“Óıÿÿÿÿ8ùß¸şÑ-
+>squid:S2129%" Remove this "Double" constructor(ÂÈô8ùß¸şÑ-
+`squid:S2184#"BCast one of the operands of this addition operation to a "double".(çô–8™’şÑ-
+[
+squid:S106'"9Replace this use of System.out or System.err by a logger.(‡Îø€øÿÿÿÿ8¿˜˜ÿÑ-
+]squid:CallToDeprecatedMethod%".Remove this use of "Double"; it is deprecated.(ÂÈô8ùß¸şÑ-
+Osquid:S1612$",Replace this lambda with a method reference.(¯“Óıÿÿÿÿ8ùß¸şÑ-
+Fsquid:S1148+"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ğ†½şÑ-
+Gsquid:S2140#")Use "java.util.Random.nextInt()" instead.(çô–8™’şÑ-
+[
+squid:S106."9Replace this use of System.out or System.err by a logger.(˜Š¿Ûüÿÿÿÿ8ÀË˜ÿÑ-
+Hsquid:S1068"*Remove this unused "LOGGER" private field.(ª´°™8ÀË˜ÿÑ-

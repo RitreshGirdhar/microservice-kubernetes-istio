@@ -1,0 +1,7 @@
+
+[
+squid:S106#"9Replace this use of System.out or System.err by a logger.(„úÍºþÿÿÿÿ8µ¦†¡Ò-
+\squid:S4973#"9Use the "equals" method if value comparison was intended.(„úÍºþÿÿÿÿ8ÎÀ†¡Ò-
+Wsquid:S4973&"9Use the "equals" method if value comparison was intended.(‘ÑÀ¢8‡Ìˆ¡Ò-
+V
+squid:S106&"9Replace this use of System.out or System.err by a logger.(‘ÑÀ¢8‡Ìˆ¡Ò-
